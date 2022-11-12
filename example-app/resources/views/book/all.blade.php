@@ -19,9 +19,8 @@
                             <td>{{ $book->merk }}</td>
                             <td>{{ $book->harga }}</td>
                             <td>
-                                <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDetail" href="detail_buku/{{$book->nama}}">Detail</a>
+                                <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDetail" href="/book/detail/{{$book->id}}">Detail</a>
                             </td>
-                            
                         </tr>
                     @endforeach
                 </tbody>

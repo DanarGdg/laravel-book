@@ -8,6 +8,7 @@
                         <th>Nama</th>
                         <th>Email</th>
                         <th>Alamat</th>
+                        <th>Buku</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -19,7 +20,14 @@
                             <td>{{ $publisher->email }}</td>
                             <td>{{ $publisher->alamat }}</td>
                             <td>
-                                <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDetail" href="detail_publisher/{{$publisher->nama}}">Detail</a>
+                                @foreach ($publisher->book as $book)
+                                <ul>
+                                    <li>{{$book->nama}}</li>
+                                </ul>
+                                @endforeach
+                            </td>
+                            <td>
+                                <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDetail" href="/publisher/detail/{{$publisher->id}}">Detail</a>
                             </td>
                         </tr>
                     @endforeach

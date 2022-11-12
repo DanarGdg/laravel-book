@@ -18,11 +18,12 @@ Route::get('/about', function () {
     return  view('about');
 });
 
-Route::get('/book', [BookController::class, 'index']);
-Route::get('/detail_buku/{book:nama}', [BookController::class, 'show']);   
+Route::group(['prefix' => '/book'], function(){
+    Route::get('/all', [BookController::class, 'index']);
+    Route::get('/detail/{book:id}', [BookController::class, 'show']);
+});
 
-
-
-// Route::get('/publisher', function () {});
-Route::get('/publisher', [PublisherController::class, 'index']);
-Route::get('/detail_publisher/{publisher:nama}', [PublisherController::class, 'show']);   
+Route::group(['prefix' => '/publisher'], function(){
+    Route::get('/all', [PublisherController::class, 'index']);
+    Route::get('/detail/{publisher:id}', [PublisherController::class, 'show']);
+});

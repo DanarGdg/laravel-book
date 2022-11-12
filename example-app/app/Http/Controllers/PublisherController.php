@@ -8,13 +8,13 @@ use App\Models\Publisher;
 class PublisherController extends Controller
 {
     public function index(){
-        return  view('publisher', [
+        return  view('publisher.all', [
             'publishers' => Publisher::all()
         ]);
     }
 
     public function show(Publisher $publisher){
-        return view('detail_publisher', [
+        return view('publisher.detail', [
             'publisher' => $publisher
         ]);
     }
