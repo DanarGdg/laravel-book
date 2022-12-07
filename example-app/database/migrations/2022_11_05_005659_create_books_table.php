@@ -19,7 +19,7 @@ return new class extends Migration
                 $table->string('nama');
                 $table->string('merk');
                 $table->integer('harga');
-                $table->timestamp('release');
+                $table->date('release');
             $table->timestamps();
         });
     }

@@ -2,6 +2,12 @@
 
 @section("content")
     <h1>buku</h1>
+    <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDetail" href="/book/create">add</a>
+    @if (session()->has('success'))
+        <div class="alert alert-success col-lg-12" role='alert'>
+            {{ session()->get('success') }}
+        </div>
+    @endif
         <table class="table table-striped" style="vertical-align: middle; font-weight: bold; font-size: 20px;">
                 <thead>
                     <tr>
@@ -20,6 +26,12 @@
                             <td>{{ $book->harga }}</td>
                             <td>
                                 <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDetail" href="/book/detail/{{$book->id}}">Detail</a>
+                                <a type="button" class="btn btn-warning" data-toggle="modal" href="/book/edit/{{ $book->id }}">Edit</a>
+                                <form action="/book/delete/{{ $book->id }}" method="post" style="display: inline;">
+                                    @method('delete')
+                                    @csrf
+                                    <button class="btn btn-danger" onClick="return confirm('Are you sure ?')">Hapus</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach
