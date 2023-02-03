@@ -1,27 +1,28 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\dashboard;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Book;
 use App\Models\Publisher;
 
-class BookController extends Controller
+class DashboardController extends Controller
 {
     public function index(){
-        return  view('book.all', [
+        return  view('dashboard.book.all', [
             'books' => Book::all()
         ]);
     }
 
     public function show(Book $book){   
-        return view('book.detail', [
+        return view('dashboard.book.detail', [
             'book' => $book
         ]);
     }
 
     public function create(){
-        return view('book.create', [
+        return view('dashboard.book.create', [
             'publishers' => Publisher::all()
         ]);
     }
@@ -40,7 +41,7 @@ class BookController extends Controller
     }
 
     public function edit(Book $book){
-        return view('book.edit', [
+        return view('dashboard.book.edit', [
             'book' => $book,
             'publishers' => Publisher::all()
         ]);
