@@ -9,9 +9,10 @@ use App\Models\Publisher;
 
 class DashboardController extends Controller
 {
-    public function index(){
+    public function index(){        
         return  view('dashboard.book.all', [
-            'books' => Book::all()
+            'publishers' => Publisher::all(),
+            'books' => Book::filter(request(['search', 'publisher']))->paginate(5)
         ]);
     }
 

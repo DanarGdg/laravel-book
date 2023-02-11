@@ -55,6 +55,7 @@ Route::group(['prefix' => '/dashboard'], function(){
     
         Route::group(['prefix' => '/book'], function(){
             Route::get('/all', [DashboardController::class, 'index'])->middleware('auth');
+            // Route::get('/all', [DashboardController::class, 'index'])->middleware('auth');
             Route::get('/detail/{book:id}', [DashboardController::class, 'show'])->middleware('auth');
             Route::get('/create', [DashboardController::class, 'create'])->middleware('auth');
             Route::post('/add', [DashboardController::class, 'store'])->middleware('auth');

@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h3 align="center">Tambah Data buku</h3>
-                        <form action="/book/add" method="POST">
+                        <form action="/dashboard/book/add" method="POST">
                             @csrf
                             <div class="form-group mb-3">
                                 <label for="exampleInputName">Nama</label>
