@@ -8,9 +8,16 @@ use App\Models\Publisher;
 
 class BookController extends Controller
 {
-    public function index(){
+    // public function index(){
+    //     return  view('book.all', [
+    //         'books' => Book::all()
+    //     ]);
+    // }
+
+    public function index(){        
         return  view('book.all', [
-            'books' => Book::all()
+            'publishers' => Publisher::all(),
+            'books' => Book::filter(request(['search', 'publisher']))->paginate(5)
         ]);
     }
 

@@ -20,6 +20,7 @@ class PublisherFactory extends Factory
             'nama' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'alamat' => fake()->city(),
+            'deskripsi' => fake()->paragraph(mt_rand(1, 3)),
         ];
     }
 }

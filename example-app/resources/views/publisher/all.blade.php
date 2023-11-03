@@ -1,36 +1,26 @@
 @extends("layouts.main")
 
 @section("content")
-    <h1>publisher</h1>
-    <table class="table table-striped" style="vertical-align: middle; font-weight: bold; font-size: 20px;">
-                <thead>
-                    <tr>
-                        <th>Nama</th>
-                        <th>Email</th>
-                        <th>Alamat</th>
-                        <th>Buku</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                
-                    @foreach ($publishers as $publisher)
-                        <tr>
-                            <td>{{ $publisher->nama }}</td>
-                            <td>{{ $publisher->email }}</td>
-                            <td>{{ $publisher->alamat }}</td>
-                            <td>
-                                @foreach ($publisher->book as $book)
-                                <ul>
-                                    <li>{{$book->nama}}</li>
-                                </ul>
-                                @endforeach
-                            </td>
-                            <td>
-                                <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDetail" href="/publisher/detail/{{$publisher->id}}">Detail</a>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-        </table>
+    <h1 class='mb-5'>Publisher</h1>
+    <div class='d-flex flex-wrap justify-content-center gap-3'>
+        @foreach ($publishers as $publisher)
+        <div class="card" style="width: 18rem;">
+            <img src="https://source.unsplash.com/400x400?people/{{$publisher->id}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ $publisher->nama }}</h5>
+                <p class="card-text">{{ $publisher->deskripsi }}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                @foreach ($publisher->book as $book)
+                    
+                    <li class="list-group-item">{{$book->nama}}</li>
+                @endforeach
+            </ul>
+            <div class="card-body">
+                <a href="#" class="card-link">{{ $publisher->email }}</a>
+                <a href="#" class="card-link">{{ $publisher->alamat }}</a>
+            </div>
+        </div>
+        @endforeach
+    </div>
 @endsection

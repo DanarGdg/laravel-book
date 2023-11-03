@@ -30,6 +30,10 @@
                                 <label for="price">Price</label>
                                 <input required type="number" class="form-control" value="{{ old('harga')}}" id="price" placeholder="Price" name="harga">
                             </div>
+                            <div class="form-group mb-3">
+                                <label for="exampleInputPassword1">Deskripsi</label>
+                                <input required type="name" class="form-control" value="{{ old('deskripsi')}}" id="exampleInputPassword1" placeholder="Masukkan deskripsi" name="deskripsi">
+                            </div>
 
                             <div class="form-group mb-3">
                                 <label for="release">Date Release</label>

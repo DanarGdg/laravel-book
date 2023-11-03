@@ -36,6 +36,11 @@
                             </div>
 
                             <div class="form-group mb-3">
+                                <label for="exampleInputPassword1">Deskripsi</label>
+                                <input required type="name" class="form-control" value="{{ old('deskripsi', $book->deskripsienv) }}" id="exampleInputPassword1" placeholder="Masukkan deskripsi" name="deskripsi">
+                            </div>
+
+                            <div class="form-group mb-3">
                                 <label for="release">Date Release</label>
                                 <input required type="date" class="form-control" value="{{ old('release', $book->release) }}" id="release" placeholder="Masukkan Umur" name="release">
                             </div>

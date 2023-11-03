@@ -35,6 +35,7 @@ class DashboardController extends Controller
             'merk' => 'required|max:255',
             'harga' => 'required',
             'release' => 'required',
+            'deskripsi' => 'required|max:255',
         ]);
 
         Book::create($validateDate);
@@ -55,6 +56,7 @@ class DashboardController extends Controller
             'merk' => 'required|max:255',
             'harga' => 'required',
             'release' => 'required',
+            'deskripsi' => 'required|max:255',
         ]);
 
         Book::where('id', $book->id)

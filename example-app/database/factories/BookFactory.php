@@ -21,6 +21,7 @@ class BookFactory extends Factory
             'nama' => fake()->sentence(mt_rand(1, 2)),
             'merk' => fake()->name(),
             'harga' => fake()->randomFloat(2, 0, 100000),
+            'deskripsi' => fake()->paragraph(mt_rand(1, 3)),
             'release' => now(),
         ];
     }

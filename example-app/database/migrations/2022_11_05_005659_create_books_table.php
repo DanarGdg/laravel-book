@@ -20,6 +20,7 @@ return new class extends Migration
                 $table->string('merk');
                 $table->integer('harga');
                 $table->date('release');
+                $table->string('deskripsi');
             $table->timestamps();
         });
     }

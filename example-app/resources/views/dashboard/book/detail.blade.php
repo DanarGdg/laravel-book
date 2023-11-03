@@ -6,6 +6,6 @@
     <p>Pengarang Buku : {{$book->merk}}</p>
     <p>Harga Buku : {{$book->harga}}</p>        
     <p>Release : {{$book->release}}</p>        
-    <p>Penerbit : {{$book->publisher->name}}</p>
+    <p>Penerbit : {{$book->publisher->nama}}</p>
     <a class="btn btn-primary" href="/dashboard/book/all">back</a>
 @endsection
